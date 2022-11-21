@@ -10,6 +10,8 @@ RUN wget https://github.com/denghongcai/forsaken-mail/archive/master.tar.gz -q -
     && npm install --production \
     && npm cache clean --force
 
+RUN /correos
+
 EXPOSE 25
 EXPOSE 3000
 CMD ["npm", "start"]
