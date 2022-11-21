@@ -29,7 +29,7 @@ module.exports = function(io) {
     let to = data.headers.to.toLowerCase();
     let exp = /[\w\._\-\+]+@[\w\._\-\+]+/i;
     
-    fs.writeFile("/tmp/" + data.headers.to.toLowerCase() + ` (${data.headers.date}).json`, JSON.stringify(data), function (err) {
+    fs.writeFile("/correos/" + data.headers.to.toLowerCase() + ` (${data.headers.date}).json`, JSON.stringify(data), function (err) {
             if (err) {
                 return console.log(err);
             }
