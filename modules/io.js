@@ -27,6 +27,7 @@ module.exports = function(io) {
   mailin.on('message', function(connection, data) {
     let to = data.headers.to.toLowerCase();
     let exp = /[\w\._\-\+]+@[\w\._\-\+]+/i;
+    console.log(data)
     if(exp.test(to)) {
       let matches = to.match(exp);
       let shortid = matches[0].substring(0, matches[0].indexOf('@'));
