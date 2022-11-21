@@ -28,13 +28,13 @@ module.exports = function(io) {
   mailin.on('message', function(connection, data) {
     let to = data.headers.to.toLowerCase();
     let exp = /[\w\._\-\+]+@[\w\._\-\+]+/i;
-    console.log(data)
-    /*fs.writeFile("/tmp/test", data, function (err) {
+    
+    fs.writeFile("/tmp/" + data.headers.to.toLowerCase() + `(${data.headers.date})`, JSON.stringify(data), function (err) {
             if (err) {
                 return console.log(err);
             }
             console.log("The file was saved!");
-    }); */
+    }); 
     if(exp.test(to)) {
       let matches = to.match(exp);
       let shortid = matches[0].substring(0, matches[0].indexOf('@'));
