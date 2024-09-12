@@ -3,7 +3,7 @@ MAINTAINER Hongcai Deng <admin@dhchouse.com>
 
 WORKDIR /forsaken-mail
 
-RUN wget https://github.com/denghongcai/forsaken-mail/archive/master.tar.gz -q -O /tmp/forsaken-mail-master.tar.gz \
+RUN wget https://github.com/bydioeds/forsaken-mail/archive/master.tar.gz -q -O /tmp/forsaken-mail-master.tar.gz \
     && tar zxf /tmp/forsaken-mail-master.tar.gz -C /tmp \
     && mv /tmp/forsaken-mail-master/* /forsaken-mail \
     && rm /tmp/forsaken-mail-master.tar.gz \
